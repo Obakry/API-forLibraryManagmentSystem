@@ -17,6 +17,8 @@ cd API-forLibraryManagmentSystem
 mvn clean install
 mvn spring-boot:run
 ```
+Run your MySql server and update [application.properties](https://github.com/0xbakry/API-forLibraryManagmentSystem/blob/main/Library-Management-System/src/main/resources/application.properties).
+
 Then fire you postman and Enjoy!!
 
 ## Classes & Components:
