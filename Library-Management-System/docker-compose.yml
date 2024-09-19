@@ -7,11 +7,13 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: itsme
       MYSQL_DATABASE: mysql
-#      MYSQL_USER: root
- #     MYSQL_PASSWORD: itsme
     ports:
       - "3306:3306"
-
+  sonar:
+    image: sonarqube:latest
+    container_name: sonarqube
+    ports:
+      - "9000:9000"
   app:
     build: .
     container_name: spring-boot-app
@@ -23,3 +25,5 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/mysql
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: itsme
+      SONARQUBE_JDBC_USERNAME: admin
+      SONARQUBE_JDBC_PASSWORD: itsme
